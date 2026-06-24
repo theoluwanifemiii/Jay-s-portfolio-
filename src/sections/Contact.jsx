@@ -19,7 +19,7 @@ export default function Contact() {
   }, []);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('jubril.osunlana@gmail.com');
+    navigator.clipboard.writeText('jubrilosunlana@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -27,7 +27,7 @@ export default function Contact() {
   const links = [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jubril-osunlana/', icon: '↗' },
     { label: 'Portfolio', href: '#', icon: '↗' },
-    { label: 'Email', href: 'mailto:jubril.osunlana@gmail.com', icon: '→' },
+    { label: 'Email', href: 'mailto:jubrilosunlana@gmail.com', icon: '→' },
   ];
 
   return (
@@ -62,7 +62,7 @@ export default function Contact() {
             maxWidth: 540, marginBottom: 48,
           }}>
             Open to Product Manager and Product Owner roles globally. Ready to relocate.
-            Eight years of user instinct and shipped results — let's talk.
+            Eight years of user instinct and shipped results. Let's talk.
           </p>
 
           {/* Email copy row */}
@@ -81,7 +81,7 @@ export default function Contact() {
           onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
           >
             <span style={{ fontSize: 15, fontWeight: 400, color: 'rgba(255,255,255,0.75)', fontFamily: 'monospace' }}>
-              jubril.osunlana@gmail.com
+              jubrilosunlana@gmail.com
             </span>
             <span style={{
               fontSize: 12, fontWeight: 600, padding: '4px 10px',

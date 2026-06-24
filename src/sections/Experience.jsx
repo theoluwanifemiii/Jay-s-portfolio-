@@ -6,66 +6,110 @@ gsap.registerPlugin(ScrollTrigger);
 
 const roles = [
   {
-    period: '2026 – Present',
-    title: 'Product Owner',
+    period: 'Apr 2026 – Present',
+    title: 'Product Owner, Pharmacy-Focused Product Pod',
     company: 'Medicare Supply Chain (MSC)',
-    location: 'Nigeria',
+    location: 'Lagos, Nigeria',
     type: 'Current',
-    desc: 'PO for HPMS — a promotion management system built into MSC\'s platform. Own the roadmap end to end, lead MVP discovery, author PRDs, and run cross-functional delivery across engineering, design, and QA.',
-    tags: ['Roadmapping', 'PRDs', 'Discovery', 'Agile'],
+    bullets: [
+      'Led end-to-end development of HPMS (Hierarchical Promotional Management System), a gamified referral and commission platform, from discovery through Phase 1 MVP delivery (June 5, 2026), managing PRD evolution through 4 major versions.',
+      'Designed and documented KPI Dashboard & MSV Leaderboard gamification system with tier-based achievement structure to drive network growth and Inviter activation.',
+      'Executed post-MVP demo with the GM, collected feedback, prioritized 3 feature requests, and delivered 2 approved enhancements within 48 hours (QR code enhancement, Confirmed Payment box).',
+      'Led a cross-functional team (Backend, Frontend, QA, Designer) through sprint planning, daily standups, and stakeholder communications to meet aggressive delivery milestones.',
+    ],
+    tags: ['Roadmapping', 'PRDs', 'Gamification', 'Agile'],
   },
   {
-    period: '2025 – Present',
-    title: 'Product Manager',
-    company: 'Planpadi (WeixelTech)',
+    period: 'Jul 2025 – Mar 2026',
+    title: 'Product Manager, Event Planning Platform',
+    company: 'Planpadi (WeixelTech Ltd)',
     location: 'Remote',
-    type: 'Current',
-    desc: 'Lead product for an event and digital wallet platform. Shipped a 60% lift in event activation, 56% mobile engagement growth, and cut failed wallet withdrawals by 70% through KYC rebuild.',
-    tags: ['Product Strategy', 'UX', 'Analytics', 'Agile'],
+    type: 'Product',
+    bullets: [
+      'Defined product roadmap using RICE prioritization and owned delivery across 3 product verticals, improving event activation by 60% through a redesigned homepage, creation flow, and ticketing UX.',
+      'Increased mobile engagement by 56% via KPI-driven UX improvements and mobile-first interaction design, tracked through Mixpanel analytics.',
+      'Reduced failed wallet withdrawals by 70% by redesigning KYC and verification flows with clearer validation and feedback mechanisms.',
+      'Led discovery, user interviews, analytics instrumentation, and Agile ceremonies to ensure fast, aligned delivery across a distributed engineering team.',
+    ],
+    tags: ['RICE Prioritization', 'UX', 'Analytics', 'Agile'],
     highlight: true,
   },
   {
-    period: '2025',
+    period: 'Jan 2025 – Oct 2025',
     title: 'Medical Representative',
     company: 'Colexa Biosensor Ltd',
     location: 'Ondo State, Nigeria',
     type: 'Field',
-    desc: 'Opened the entire Ondo State market from zero as the first Medical Rep. Built and sustained the customer base through hands-on product demos and structured market insight gathering.',
+    bullets: [
+      'Launched Colexa Biosensor’s regional presence in Ondo State as first Medical Representative, building customer base from zero and establishing market foothold.',
+      'Delivered product demos and education for glucometers and test strips, driving adoption, repeat usage, and sales growth.',
+      'Executed regional marketing initiatives to increase brand visibility and market penetration in underserved territory.',
+      'Collected structured customer and market insights that informed product positioning, messaging, and go-to-market decisions.',
+    ],
     tags: ['GTM', 'Market Entry', 'User Insight'],
   },
   {
-    period: '2022 – 2025',
+    period: 'Aug 2022 – Jan 2025',
     title: 'Medical Representative',
     company: 'Fidson Healthcare Plc',
     location: 'Nigeria',
     type: 'Field',
-    desc: 'Ranked top 3 of all reps nationwide within 6 months. Managed 80+ weekly healthcare clients at a 65% conversion rate, contributing to 40% revenue growth.',
+    bullets: [
+      'Managed a pipeline of 80+ weekly healthcare clients, achieving a 65% conversion rate and contributing to 40% revenue growth through product-led demos and customer education.',
+      'Generated structured market and customer insights that shaped product messaging, segmentation, and regional go-to-market strategies.',
+      'Developed deep pharmaceutical and healthcare domain expertise foundational to product management at MSC.',
+      'Strengthened cross-functional communication and negotiation skills transferable to product and stakeholder management environments.',
+    ],
     tags: ['Sales', 'Client Management', 'Healthcare'],
   },
   {
-    period: '2018 – 2020',
+    period: 'Jun 2018 – Sep 2020',
     title: 'Project Manager',
-    company: 'Tochi Health Access Initiative',
+    company: 'TOHAI Health Awareness Initiative',
     location: 'Abuja & Northern Nigeria',
     type: 'NGO',
-    desc: 'Led multi-regional public health campaigns and genotype testing programs reaching 500+ individuals. Built performance dashboards and managed a remote cross-functional team.',
-    tags: ['Program Management', 'Public Health', 'Data'],
+    bullets: [
+      'Coordinated multi-regional health projects reaching 500+ participants, managing logistics, research execution, and cross-stakeholder alignment.',
+      'Conducted user needs assessments and stakeholder alignment foundational to product delivery methodologies and project success.',
+      'Developed leadership, communication, and project coordination skills that translate to product management environments.',
+      'Built a foundation in healthcare domain knowledge and understanding of complex, multi-stakeholder initiatives.',
+    ],
+    tags: ['Program Management', 'Public Health', 'Stakeholder Alignment'],
   },
   {
-    period: '2017 – 2018',
+    period: 'Sep 2017 – Apr 2018',
     title: 'Medical Sales Representative',
     company: 'DrugStoc',
-    location: 'Lagos',
+    location: 'Lagos State',
     type: 'Field',
-    desc: 'Built digital-first customer engagement strategies driving a 95% client retention rate across hospitals and pharmacies.',
+    bullets: [
+      'Built digital-first customer engagement strategies that drove a 95% client retention rate.',
+      'Sustained a strong B2B sales pipeline across hospitals and pharmacies through strategic follow-up.',
+      'Fed customer feedback to marketing and product teams to sharpen positioning and training materials.',
+    ],
     tags: ['B2B Sales', 'Client Retention', 'Digital'],
+  },
+  {
+    period: 'Jul 2016 – May 2017',
+    title: 'Assistant Project Manager',
+    company: 'Planned Parenthood Federation of Nigeria',
+    location: 'Abeokuta, Ogun State',
+    type: 'Internship',
+    bullets: [
+      'Supported training programs for 300+ Community Health Workers focused on maternal health tools and user education.',
+      'Collected and analysed field data to guide community health initiatives and measure campaign impact.',
+      'Led logistics and stakeholder coordination for testing campaigns reaching 500+ participants.',
+    ],
+    tags: ['Community Health', 'Field Research', 'Logistics'],
   },
 ];
 
 const typeColors = {
   Current: { bg: '#E6F0EB', color: '#1A4D3A' },
+  Product: { bg: '#EFF6FF', color: '#1D4ED8' },
   Field: { bg: '#FEF3EC', color: '#C4632A' },
   NGO: { bg: '#EEF2FF', color: '#4338CA' },
+  Internship: { bg: '#F4F4F5', color: '#52525B' },
 };
 
 export default function Experience() {
@@ -108,7 +152,7 @@ export default function Experience() {
               fontSize: 'clamp(32px, 4.5vw, 52px)',
               lineHeight: 1.1, letterSpacing: '-0.02em', color: 'var(--ink)',
             }}>
-              10 years of proof,<br />
+              8 years of proof,<br />
               <span style={{ color: 'var(--ink-faint)' }}>not theory.</span>
             </h2>
           </div>
@@ -132,51 +176,69 @@ export default function Experience() {
           {roles.map((r, i) => {
             const tc = typeColors[r.type] || typeColors.Field;
             return (
-              <div key={i} className="exp-row" style={{
-                display: 'grid',
-                gridTemplateColumns: '140px 1fr',
-                gap: '0 40px',
-                borderTop: '1px solid var(--border)',
-                paddingTop: 28, paddingBottom: 28,
-                transition: 'background 0.2s',
-                borderRadius: 8,
-                cursor: 'default',
-              }}
-              onMouseEnter={e => e.currentTarget.style.background = 'var(--bg)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-              >
-                {/* Left: period */}
-                <div style={{ paddingTop: 4 }}>
-                  <p style={{ fontSize: 13, color: 'var(--ink-muted)', fontWeight: 400, lineHeight: 1.5 }}>{r.period}</p>
-                  <span style={{
-                    display: 'inline-block', marginTop: 8,
-                    fontSize: 11, fontWeight: 600, padding: '3px 10px',
-                    borderRadius: 40, letterSpacing: '0.06em',
-                    background: tc.bg, color: tc.color,
-                    textTransform: 'uppercase',
-                  }}>{r.type}</span>
-                </div>
-
-                {/* Right: details */}
-                <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 4, marginBottom: 6 }}>
-                    <div>
-                      <p style={{ fontSize: 17, fontWeight: 600, color: 'var(--ink)', letterSpacing: '-0.01em' }}>{r.title}</p>
-                      <p style={{ fontSize: 14, color: 'var(--accent)', fontWeight: 500 }}>{r.company}</p>
-                    </div>
-                    <p style={{ fontSize: 13, color: 'var(--ink-faint)' }}>{r.location}</p>
+              <div key={i}>
+                {i === 2 && (
+                  <p style={{
+                    fontSize: 11, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
+                    color: 'var(--ink-faint)', paddingTop: 32, paddingBottom: 8,
+                  }}>Prior Experience</p>
+                )}
+                <div className="exp-row" style={{
+                  display: 'grid',
+                  gridTemplateColumns: '140px 1fr',
+                  gap: '0 40px',
+                  borderTop: '1px solid var(--border)',
+                  paddingTop: 28, paddingBottom: 28,
+                  transition: 'background 0.2s',
+                  borderRadius: 8,
+                  cursor: 'default',
+                }}
+                onMouseEnter={e => e.currentTarget.style.background = 'var(--bg)'}
+                onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                >
+                  {/* Left: period */}
+                  <div style={{ paddingTop: 4 }}>
+                    <p style={{ fontSize: 13, color: 'var(--ink-muted)', fontWeight: 400, lineHeight: 1.5 }}>{r.period}</p>
+                    <span style={{
+                      display: 'inline-block', marginTop: 8,
+                      fontSize: 11, fontWeight: 600, padding: '3px 10px',
+                      borderRadius: 40, letterSpacing: '0.06em',
+                      background: tc.bg, color: tc.color,
+                      textTransform: 'uppercase',
+                    }}>{r.type}</span>
                   </div>
-                  <p style={{ fontSize: 14, color: 'var(--ink-muted)', lineHeight: 1.65, marginBottom: 12, fontWeight: 300 }}>{r.desc}</p>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-                    {r.tags.map(t => (
-                      <span key={t} style={{
-                        fontSize: 12, fontWeight: 500,
-                        padding: '4px 10px', borderRadius: 40,
-                        border: '1px solid var(--border)',
-                        color: 'var(--ink-muted)',
-                        background: 'var(--white)',
-                      }}>{t}</span>
-                    ))}
+
+                  {/* Right: details */}
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 4, marginBottom: 10 }}>
+                      <div>
+                        <p style={{ fontSize: 17, fontWeight: 600, color: 'var(--ink)', letterSpacing: '-0.01em' }}>{r.title}</p>
+                        <p style={{ fontSize: 14, color: 'var(--accent)', fontWeight: 500 }}>{r.company}</p>
+                      </div>
+                      <p style={{ fontSize: 13, color: 'var(--ink-faint)' }}>{r.location}</p>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 14 }}>
+                      {r.bullets.map((b, j) => (
+                        <p key={j} style={{
+                          display: 'flex', gap: 8,
+                          fontSize: 14, color: 'var(--ink-muted)', lineHeight: 1.6, fontWeight: 300,
+                        }}>
+                          <span style={{ color: 'var(--ink-faint)', flexShrink: 0 }}>▸</span>
+                          <span>{b}</span>
+                        </p>
+                      ))}
+                    </div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                      {r.tags.map(t => (
+                        <span key={t} style={{
+                          fontSize: 12, fontWeight: 500,
+                          padding: '4px 10px', borderRadius: 40,
+                          border: '1px solid var(--border)',
+                          color: 'var(--ink-muted)',
+                          background: 'var(--white)',
+                        }}>{t}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

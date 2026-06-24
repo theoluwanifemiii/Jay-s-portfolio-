@@ -25,7 +25,7 @@ export default function Highlights() {
   }, []);
 
   return (
-    <section ref={sectionRef} style={{ paddingBottom: 'var(--gap)' }}>
+    <section ref={sectionRef} id="work" style={{ paddingBottom: 'var(--gap)' }}>
       <div className="container">
         <p className="works-header" style={{
           fontSize: 'clamp(18px, 2.4vw, 26px)',
@@ -33,7 +33,7 @@ export default function Highlights() {
           color: 'var(--ink)', maxWidth: 760,
           marginBottom: 'clamp(32px, 5vw, 56px)',
         }}>
-          Three products, three different problems &mdash; <span style={{ color: 'var(--ink-faint)' }}>helping teams ship faster, own their roadmap, and reach more people with less guesswork.</span>
+          Three products, three different problems. <span style={{ color: 'var(--ink-faint)' }}>Helping teams ship faster, own their roadmap, and reach more people with less guesswork.</span>
         </p>
 
         <div className="works-grid" style={{

@@ -3,12 +3,13 @@ export const works = [
     slug: 'planpadi',
     bg: '#1A4D3A',
     mockKey: 'list',
-    eyebrow: 'Planpadi · Events & Wallet',
+    eyebrow: 'Planpadi · Event Management & Vendor Outsourcing',
     title: 'Lifting event activation by 60%.',
     desc: 'Redesigned the event creation flow, homepage and ticketing to remove friction at every step of organizer onboarding.',
     role: 'Product Manager',
     period: '2025 – Present',
-    intro: 'As Product Manager for Planpadi’s event and digital wallet platform, I own the roadmap end to end — from the friction organizers hit on day one, to the metrics that prove it’s gone.',
+    liveUrl: 'https://planpadi.com/',
+    intro: 'As Product Manager for Planpadi’s event and digital wallet platform, I own the roadmap end to end: from the friction organizers hit on day one, to the metrics that prove it’s gone.',
     blocks: [
       {
         label: 'Event Creation & Management',
@@ -81,27 +82,27 @@ export const works = [
       },
     ],
     outcomeLabel: 'The Outcome',
-    outcomeText: 'A 60% lift in event activation, 56% growth in mobile engagement, and a 70% cut in failed wallet withdrawals — measured against real usage data, not assumptions.',
+    outcomeText: 'A 60% lift in event activation, 56% growth in mobile engagement, and a 70% cut in failed wallet withdrawals, measured against real usage data, not assumptions.',
   },
   {
     slug: 'msc-hpms',
     bg: '#3A3836',
     mockKey: 'blob',
-    eyebrow: 'MSC · Hierarchical Promotion Management',
+    eyebrow: 'MSC · Hierarchical Promotional Management System (HPMS)',
     title: 'Managing a scope pivot mid-sprint.',
-    desc: 'Owning discovery and delivery for HPMS — a promoter/referral system for MSC’s B2B pharmacy procurement platform — through a major scope pivot.',
+    desc: 'Owning discovery and delivery for HPMS, a promoter/referral system for MSC’s B2B pharmacy procurement platform, through a major scope pivot.',
     role: 'Product Owner',
     period: '2026 – Present',
     status: {
       label: 'Pre-launch · MVP at risk',
-      note: 'No outcome metrics yet — this is a story about ownership through a scope pivot, not results.',
+      note: 'No outcome metrics yet. This is a story about ownership through a scope pivot, not results.',
     },
-    intro: 'HPMS (Hierarchical Promotion Management System) lets pharmacies refer other pharmacies into MSC’s ecosystem, track invitees, earn commission on referred orders, and withdraw earnings. As Product Owner, I translate the GM’s strategic direction into buildable requirements and manage delivery across five teams — backend, frontend, design, QA, and the Personal Centre platform team.',
+    intro: 'HPMS (Hierarchical Promotional Management System) lets pharmacies refer other pharmacies into MSC’s ecosystem, track invitees, earn commission on referred orders, and withdraw earnings. As Product Owner, I translate the GM’s strategic direction into buildable requirements and manage delivery across five teams: backend, frontend, design, QA, and the Personal Centre platform team.',
     blocks: [
       {
         label: 'The Original Concept',
         mockKey: 'window',
-        text: 'HPMS was first scoped as a standalone promoter app — its own shell, navigation and home screen for QR code, invitees, commission tracking and withdrawal.',
+        text: 'HPMS was first scoped as a standalone promoter app, with its own shell, navigation and home screen for QR code, invitees, commission tracking and withdrawal.',
       },
       {
         label: 'The Pivot',
@@ -112,11 +113,11 @@ export const works = [
     sections: [
       {
         heading: 'Scope Changes, Mid-Sprint',
-        body: 'On 26 May 2026, GM Mr. Bruce locked the roadmap and directed five changes that hit work already in progress — the central challenge I had to manage as PO.',
+        body: 'On 26 May 2026, GM Mr. Bruce locked the roadmap and directed five changes that hit work already in progress. This was the central challenge I had to manage as PO.',
         list: [
           {
             title: 'Standalone app → Personal Centre section',
-            text: 'The promoter app was scrapped as a separate product. Every flow — QR code, invitees, commission, withdrawal — was folded into Personal Centre as a dedicated section. Every screen had to be re-adapted to PC’s existing design system and navigation.',
+            text: 'The promoter app was scrapped as a separate product. Every flow (QR code, invitees, commission, withdrawal) was folded into Personal Centre as a dedicated section. Every screen had to be re-adapted to PC’s existing design system and navigation.',
           },
           {
             title: 'Territory assignment removed',
@@ -132,7 +133,7 @@ export const works = [
           },
           {
             title: 'New Pharmacy Promoter Page added',
-            text: 'A new screen was added to scope inside Personal Centre. I authored a PRD Addendum v1.0 defining it in full — QR code, invitee list, commission by status, bank details for withdrawal — and shared it with the design team.',
+            text: 'A new screen was added to scope inside Personal Centre. I authored a PRD Addendum v1.0 defining it in full (QR code, invitee list, commission by status, bank details for withdrawal) and shared it with the design team.',
           },
         ],
       },
@@ -169,12 +170,13 @@ export const works = [
     slug: 'tochi-health',
     bg: '#C4632A',
     mockKey: 'window',
-    eyebrow: 'Tochi Health · Public Health',
+    eyebrow: 'TOHAI Health Awareness Initiative · Public Health',
     title: 'Dashboards for 500+ lives reached.',
     desc: 'Built performance dashboards and led remote teams across multi-regional genotype testing campaigns.',
     role: 'Project Manager',
     period: '2018 – 2020',
-    intro: 'As Project Manager for the Tochi Health Access Initiative, I led multi-regional public health campaigns across Northern Nigeria, reaching communities with little prior access to genotype testing.',
+    liveUrl: 'https://tohainigeria.org/?i=1',
+    intro: 'As Project Manager for the TOHAI Health Awareness Initiative, I led multi-regional public health campaigns across Northern Nigeria, reaching communities with little prior access to genotype testing.',
     blocks: [
       {
         label: 'The Problem',

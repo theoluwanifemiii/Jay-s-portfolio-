@@ -28,7 +28,7 @@ export default function WorkDetail() {
   return (
     <div ref={pageRef}>
       <Navbar />
-      <main style={{ paddingTop: 140, paddingBottom: 'var(--gap)' }}>
+      <main style={{ paddingTop: 100, paddingBottom: 'calc(var(--gap) + 60px)' }}>
         <div className="container">
           <Link to="/" className="detail-fade" style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
@@ -54,6 +54,18 @@ export default function WorkDetail() {
                 fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase',
                 padding: '4px 12px', borderRadius: 40, background: '#FEF3EC', color: '#C4632A',
               }}>{work.status.label}</span>
+            )}
+            {work.liveUrl && (
+              <a href={work.liveUrl} target="_blank" rel="noreferrer" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 6,
+                fontSize: 13, fontWeight: 600, color: 'var(--ink)',
+                padding: '6px 14px', borderRadius: 40,
+                border: '1px solid var(--border)',
+                transition: 'border-color 0.2s, background 0.2s',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--ink)'; e.currentTarget.style.background = 'var(--bg-alt)'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'transparent'; }}
+              >Visit live site ↗</a>
             )}
           </div>
 
@@ -173,7 +185,7 @@ export default function WorkDetail() {
                               display: 'flex', gap: 10, fontSize: 14.5, color: 'var(--ink-muted)',
                               lineHeight: 1.6, fontWeight: 300, listStyle: 'none',
                             }}>
-                              <span style={{ color: 'var(--ink-faint)' }}>—</span>
+                              <span style={{ color: 'var(--ink-faint)' }}>•</span>
                               <span>{c}</span>
                             </li>
                           ))}

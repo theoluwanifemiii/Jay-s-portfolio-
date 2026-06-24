@@ -6,6 +6,7 @@ import Highlights from './sections/Highlights';
 import Story from './sections/Story';
 import Numbers from './sections/Numbers';
 import Experience from './sections/Experience';
+import Testimonials from './sections/Testimonials';
 import Contact from './sections/Contact';
 import WorkDetail from './pages/WorkDetail';
 
@@ -19,6 +20,7 @@ function Home() {
         <Story />
         <Numbers />
         <Experience />
+        <Testimonials />
         <Contact />
       </main>
     </>

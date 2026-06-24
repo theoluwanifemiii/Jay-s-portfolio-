@@ -46,8 +46,8 @@ export default function Hero() {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      paddingTop: 140,
-      paddingBottom: 80,
+      paddingTop: 100,
+      paddingBottom: 120,
       position: 'relative',
     }}>
       <div className="container">

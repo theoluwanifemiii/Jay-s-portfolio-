@@ -99,10 +99,10 @@ export default function Numbers() {
     { value: '56', suffix: '%', label: 'Mobile engagement growth', context: 'KPI-driven UX improvements based on real usage data' },
     { value: '70', suffix: '%', label: 'Failed withdrawals cut', context: 'Rebuilt KYC and verification flows with clearer validation & feedback' },
     { value: '33', suffix: '%', label: 'Platform reliability up', context: 'Communication features and system updates improving stability' },
-    { value: '65', suffix: '%', label: 'Conversion rate', context: 'As Medical Rep at Fidson Healthcare, ranked top 3 within 6 months' },
+    { value: '65', suffix: '%', label: 'Conversion rate', context: 'As Medical Rep at Fidson Healthcare, ranked top 3 within one year' },
     { value: '40', suffix: '%', label: 'Revenue growth driven', context: 'At Fidson Healthcare managing 80+ weekly healthcare clients' },
     { value: '95', suffix: '%', label: 'Client retention', context: 'At DrugStoc through digital-first B2B engagement strategies' },
-    { value: '500', suffix: '+', label: 'Lives reached', context: 'Health campaigns across Northern Nigeria with Tochi Health' },
+    { value: '500', suffix: '+', label: 'Lives reached', context: 'Health campaigns across Northern Nigeria with TOHAI Health Awareness Initiative' },
   ];
 
   return (

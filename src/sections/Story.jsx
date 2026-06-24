@@ -33,8 +33,8 @@ export default function Story() {
   const pillars = [
     { years: '8 yrs', label: 'Healthcare', desc: 'Demos, onboarding & raw feedback from real patients and clinicians' },
     { years: '5 yrs', label: 'B2B Field Sales', desc: 'Hospitals, pharmacies, 80+ weekly clients, 65% conversion rate' },
-    { years: '2 yrs', label: 'Public Health', desc: '500+ participants across Northern Nigeria in health access campaigns' },
-    { years: '1 yr+', label: 'Product', desc: 'Shipping measurable outcomes at Planpadi and MSC from day one' },
+    { years: '4 yrs', label: 'Public Health', desc: '500+ participants across Northern Nigeria in health access campaigns' },
+    { years: '2 yrs', label: 'Product', desc: 'Shipping measurable outcomes at Planpadi and MSC from day one' },
   ];
 
   return (
@@ -54,7 +54,7 @@ export default function Story() {
             <p className="story-label" style={{
               fontSize: 12, fontWeight: 600, letterSpacing: '0.12em',
               textTransform: 'uppercase', color: 'var(--ink-faint)', marginBottom: 16,
-            }}>The Story</p>
+            }}>My Story</p>
 
             <h2 className="story-headline" style={{
               fontFamily: 'var(--font-sans)',
@@ -69,7 +69,7 @@ export default function Story() {
 
             <div className="story-body" style={{ maxWidth: 580 }}>
               <p className="story-para" style={{ color: 'var(--ink-muted)', lineHeight: 1.75, marginBottom: 16, fontWeight: 300, fontSize: 16 }}>
-                Before product, I was in the field across healthcare and B2B — running demos, onboarding customers, and collecting the kind of raw, unfiltered feedback you only get face to face. Eight years of watching real people adopt products, get stuck, and decide whether to come back.
+                Before product, I was in the field across healthcare and B2B, running demos, onboarding customers, and collecting the kind of raw, unfiltered feedback you only get face to face. Eight years of watching real people adopt products, get stuck, and decide whether to come back.
               </p>
               <p className="story-para" style={{ color: 'var(--ink-muted)', lineHeight: 1.75, marginBottom: 16, fontWeight: 300, fontSize: 16 }}>
                 That work taught me what no framework can. How adoption actually happens. Where friction hides. What makes someone trust a product enough to pay for it again.
