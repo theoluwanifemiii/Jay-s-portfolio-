@@ -24,8 +24,10 @@ export default function Navbar() {
         zIndex: 100,
         display: 'flex',
         alignItems: 'center',
-        gap: 4,
-        padding: 6,
+        gap: 'clamp(2px, 1vw, 4px)',
+        padding: 'clamp(4px, 1.5vw, 6px)',
+        maxWidth: 'calc(100vw - 20px)',
+        overflowX: 'auto',
         background: 'rgba(255,255,255,0.9)',
         backdropFilter: 'blur(12px)',
         border: '1px solid var(--border)',
@@ -33,7 +35,7 @@ export default function Navbar() {
         boxShadow: '0 8px 28px rgba(0,0,0,0.1)',
       }}>
         <a href="/" style={{
-          width: 38, height: 38,
+          width: 'clamp(28px, 8vw, 38px)', height: 'clamp(28px, 8vw, 38px)',
           display: 'block',
           borderRadius: '50%',
           overflow: 'hidden',
@@ -44,12 +46,12 @@ export default function Navbar() {
           }} />
         </a>
 
-        <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+        <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(1px, 0.6vw, 4px)' }}>
           {links.map(l => (
             <a key={l} href={`/#${l.toLowerCase()}`} style={{
-              fontSize: 13.5,
+              fontSize: 'clamp(10px, 2.8vw, 13.5px)',
               fontWeight: 500,
-              padding: '8px 14px',
+              padding: 'clamp(5px, 1.8vw, 8px) clamp(6px, 2.2vw, 14px)',
               borderRadius: 30,
               color: 'var(--ink-muted)',
               whiteSpace: 'nowrap',
@@ -64,11 +66,11 @@ export default function Navbar() {
         <a href="mailto:jubrilosunlana@gmail.com" className="nav-cta" style={{
           display: 'inline-flex',
           alignItems: 'center',
-          padding: '12px 20px',
+          padding: 'clamp(7px, 2vw, 12px) clamp(10px, 3vw, 20px)',
           background: 'var(--ink)',
           color: 'var(--white)',
           borderRadius: 30,
-          fontSize: 13.5,
+          fontSize: 'clamp(10px, 2.8vw, 13.5px)',
           fontWeight: 600,
           letterSpacing: '0.01em',
           transition: 'opacity 0.2s',
@@ -80,6 +82,11 @@ export default function Navbar() {
         >Get in touch</a>
       </div>
 
+      <style>{`
+        @media (max-width: 420px) {
+          .nav-cta { display: none !important; }
+        }
+      `}</style>
     </>
   );
 }
