@@ -20,7 +20,7 @@ const roles = [
     tags: ['Roadmapping', 'PRDs', 'Gamification', 'Agile'],
   },
   {
-    period: 'Jul 2025 – Mar 2026',
+    period: 'Jan 2025 – Mar 2026',
     title: 'Product Manager, Event Planning Platform',
     company: 'Planpadi (WeixelTech Ltd)',
     location: 'Remote',

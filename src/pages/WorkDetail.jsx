@@ -216,6 +216,36 @@ export default function WorkDetail() {
             </div>
           )}
 
+          {/* Photo gallery */}
+          {work.gallery && (
+            <div className="detail-fade" style={{ marginBottom: 'clamp(56px, 8vw, 100px)' }}>
+              <p style={{
+                fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
+                color: 'var(--ink-faint)', marginBottom: 24,
+              }}>{work.gallery.caption}</p>
+
+              <div className="marquee-wrap" style={{
+                overflow: 'hidden',
+                width: '100%',
+                WebkitMaskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
+                maskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
+              }}>
+                <div className="marquee-track" style={{
+                  display: 'flex',
+                  gap: 'clamp(12px, 2vw, 20px)',
+                  width: 'max-content',
+                }}>
+                  {[...work.gallery.images, ...work.gallery.images].map((img, i) => (
+                    <img key={i} src={img.src} alt={img.alt} loading="lazy" style={{
+                      height: 'clamp(200px, 28vw, 340px)', width: 'auto',
+                      objectFit: 'cover', borderRadius: 14, flexShrink: 0,
+                    }} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Outcome row: label + bold paragraph */}
           <div className="detail-fade" style={{
             display: 'grid', gridTemplateColumns: '160px 1fr',
@@ -261,6 +291,16 @@ export default function WorkDetail() {
           .detail-blocks { grid-template-columns: 1fr !important; }
           .feature-row { grid-template-columns: 1fr !important; }
           .narrative-row { grid-template-columns: 1fr !important; }
+        }
+        .marquee-track {
+          animation: marquee-scroll 32s linear infinite;
+        }
+        .marquee-wrap:hover .marquee-track {
+          animation-play-state: paused;
+        }
+        @keyframes marquee-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
         }
       `}</style>
     </div>

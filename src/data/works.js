@@ -1,88 +1,115 @@
+import checkinDesk from '../assets/planpadi/checkin-desk.jpg';
+import qrTicketSignage from '../assets/planpadi/qr-ticket-signage.jpg';
+import attendeeCheckin from '../assets/planpadi/attendee-checkin.jpg';
+import accessTags from '../assets/planpadi/access-tags.jpg';
+import teamCloseup1 from '../assets/planpadi/team-closeup-1.jpg';
+import teamCloseup2 from '../assets/planpadi/team-closeup-2.jpg';
+import accessTagWristband from '../assets/planpadi/access-tag-wristband.jpg';
+import qrShirt from '../assets/planpadi/qr-shirt.jpg';
+
 export const works = [
   {
     slug: 'planpadi',
     bg: '#1A4D3A',
     mockKey: 'list',
     eyebrow: 'Planpadi · Event Management & Vendor Outsourcing',
-    title: 'Lifting event activation by 60%.',
-    desc: 'Redesigned the event creation flow, homepage and ticketing to remove friction at every step of organizer onboarding.',
+    title: 'Building a scalable event management platform.',
+    desc: 'Drove product strategy across private events, organization tools, premium services and subscription monetization.',
     role: 'Product Manager',
-    period: '2025 – Present',
+    period: 'Jan 2025 – Mar 2026',
     liveUrl: 'https://planpadi.com/',
-    intro: 'As Product Manager for Planpadi’s event and digital wallet platform, I own the roadmap end to end: from the friction organizers hit on day one, to the metrics that prove it’s gone.',
+    intro: 'Planpadi lets organizers create, manage, promote and monetize events while giving attendees a seamless ticketing experience. As Planpadi’s customer base grew, organizers lacked control over private events, check-in was largely manual, and the platform had no monetization structure beyond ticket sales. As Product Manager, I drove product strategy, prioritization and cross-functional delivery to close those gaps.',
     blocks: [
       {
-        label: 'Event Creation & Management',
+        label: 'Private Event Management',
         mockKey: 'list',
-        text: 'Defined acceptance criteria for clickable Media, Description, Ticket and Location sections, and replaced placeholders with actionable prompts like “Upload an Image.”',
+        text: 'Invite-only events, link access, guest requests and host approval workflows give organizers full control over who gets in.',
       },
       {
-        label: 'Wallet & User Access Expansion',
+        label: 'Subscription Monetization',
         mockKey: 'window',
-        text: 'Designed a secure flow letting non-vendors withdraw funds, with KYC and balance validation plus full transaction history for transparency.',
+        text: 'Planpadi Premium and Planpadi Gold introduced recurring revenue, backed by feature-based and role-based access control.',
       },
     ],
+    gallery: {
+      caption: 'Live at Ekaabo 2025',
+      images: [
+        { src: checkinDesk, alt: 'The Planpadi team running check-in at Ekaabo 2025' },
+        { src: teamCloseup1, alt: 'The Planpadi team at the check-in desk' },
+        { src: teamCloseup2, alt: 'The Planpadi team at the check-in desk' },
+        { src: qrTicketSignage, alt: 'QR ticket signage for contactless event entry' },
+        { src: attendeeCheckin, alt: 'An attendee checking in via QR scan' },
+        { src: accessTagWristband, alt: 'A Planpadi access tag wristband' },
+        { src: accessTags, alt: 'Planpadi access tags for tiered, controlled entry' },
+        { src: qrShirt, alt: 'A Planpadi QR code printed on an event staff shirt' },
+      ],
+    },
     features: [
       {
-        title: 'Event Creation & Management Enhancements',
-        goal: 'Simplify how users create and manage events on the platform.',
+        title: 'Private Event Management System',
+        goal: 'Give organizers control over who can access exclusive, invite-only events.',
         contributions: [
-          'Defined detailed acceptance criteria for clickable Media, Description, Ticket and Location sections.',
-          'Replaced placeholders with clear, actionable prompts like “Upload an Image” and “Tell us about your event.”',
-          'Improved event creation flow and reduced errors through better contextual guidance.',
-          'Increased short description limit from 60 to 160 characters for SEO and clarity.',
+          'Invite-only events',
+          'Link access events',
+          'Guest access requests',
+          'Host approval workflows',
+          'Invitation management',
         ],
         impact: [
-          'Reduced user confusion during event setup.',
-          'Enhanced usability and discoverability of event details.',
-          'Increased event creation completion rate (based on team feedback).',
+          'Increased organizer confidence in hosting exclusive events.',
+          'Reduced unauthorized access to private events.',
+          'Improved attendee management experience.',
         ],
       },
       {
-        title: 'Wallet & User Access Expansion',
-        goal: 'Extend wallet withdrawal capability to all users, not just vendors.',
+        title: 'Organization Management Suite',
+        goal: 'Give organizations managing multiple events centralized controls and governance.',
         contributions: [
-          'Designed a flow allowing non-vendors to withdraw funds securely.',
-          'Defined system validation for sufficient balance and KYC checks.',
-          'Ensured transaction history visibility for transparency.',
+          'Publishing controls',
+          'Approval workflows',
+          'Administrative settings',
+          'Team management capabilities',
+          'Organization-level configuration',
         ],
         impact: [
-          'Improved financial flexibility for regular users.',
-          'Increased trust and inclusivity on the platform.',
+          'Improved operational efficiency for organizations.',
+          'Reduced administrative overhead.',
+          'Enabled scalable event management across teams.',
         ],
       },
       {
-        title: 'Event Discovery & Ticket Engagement',
-        goal: 'Increase event visibility and ticket purchase conversion.',
+        title: 'Premium Event Services',
+        goal: 'Give high-value organizers tools to create professional event experiences.',
         contributions: [
-          'Fixed “Buy Ticket” button positioning for mobile usability.',
-          'Introduced a “Download QR Code” feature for easy event promotion.',
-          'Implemented custom thumbnail selection for event listings.',
-          'Optimized description length and visibility for better SEO.',
+          'QR code check-in',
+          'Broadcast invitations',
+          'Custom event branding',
+          'Managed event services',
         ],
         impact: [
-          'Improved ticket purchase flow.',
-          'Enabled event organizers to promote more effectively.',
-          'Enhanced mobile experience.',
+          'Faster attendee check-in experience.',
+          'Improved event professionalism.',
+          'Increased value proposition for premium organizers.',
         ],
       },
       {
-        title: 'Platform Infrastructure & Support Setup',
-        goal: 'Strengthen system performance, access control, and support.',
+        title: 'Subscription Monetization',
+        goal: 'Build recurring revenue beyond per-ticket transaction volume.',
         contributions: [
-          'Enforced privacy by restricting access to unpublished events (404 fallback).',
-          'Configured support@planpadi.com for customer service routing.',
-          'Created blog.planpadi for announcements and content marketing.',
-          'Recommended a JSON-based data structure for scalable content management.',
+          'Launched Planpadi Premium, a monthly subscription tier with enhanced event features',
+          'Launched Planpadi Gold, an advanced feature package with premium organizer capabilities',
+          'Feature-based access controls',
+          'Role-based access control (RBAC)',
         ],
         impact: [
-          'Improved reliability and communication channels.',
-          'Future-proofed the system for growth and SEO expansion.',
+          'Established recurring revenue streams.',
+          'Improved customer retention.',
+          'Created clear upgrade paths for organizers.',
         ],
       },
     ],
     outcomeLabel: 'The Outcome',
-    outcomeText: 'A 60% lift in event activation, 56% growth in mobile engagement, and a 70% cut in failed wallet withdrawals, measured against real usage data, not assumptions.',
+    outcomeText: 'A 60% lift in event activation, 56% growth in mobile engagement, and a 70% cut in failed wallet withdrawals, alongside a newly launched subscription business and organization-level management tools that turned Planpadi into a more complete event management ecosystem.',
   },
   {
     slug: 'msc-hpms',

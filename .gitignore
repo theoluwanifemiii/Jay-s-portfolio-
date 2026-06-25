@@ -15,3 +15,6 @@ dist-ssr/
 *.log
 npm-debug.log*
 .claude
+
+# Original full-resolution camera photos (optimized copies are committed instead)
+src/assets/Planpadi/_W3A*
