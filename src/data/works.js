@@ -1,11 +1,11 @@
-import checkinDesk from '../assets/planpadi/checkin-desk.jpg';
-import qrTicketSignage from '../assets/planpadi/qr-ticket-signage.jpg';
-import attendeeCheckin from '../assets/planpadi/attendee-checkin.jpg';
-import accessTags from '../assets/planpadi/access-tags.jpg';
-import teamCloseup1 from '../assets/planpadi/team-closeup-1.jpg';
-import teamCloseup2 from '../assets/planpadi/team-closeup-2.jpg';
-import accessTagWristband from '../assets/planpadi/access-tag-wristband.jpg';
-import qrShirt from '../assets/planpadi/qr-shirt.jpg';
+import checkinDesk from '../assets/Planpadi/checkin-desk.jpg';
+import qrTicketSignage from '../assets/Planpadi/qr-ticket-signage.jpg';
+import attendeeCheckin from '../assets/Planpadi/attendee-checkin.jpg';
+import accessTags from '../assets/Planpadi/access-tags.jpg';
+import teamCloseup1 from '../assets/Planpadi/team-closeup-1.jpg';
+import teamCloseup2 from '../assets/Planpadi/team-closeup-2.jpg';
+import accessTagWristband from '../assets/Planpadi/access-tag-wristband.jpg';
+import qrShirt from '../assets/Planpadi/qr-shirt.jpg';
 
 export const works = [
   {
