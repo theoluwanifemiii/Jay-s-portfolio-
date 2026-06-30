@@ -97,7 +97,7 @@ export const works = [
       },
     ],
     outcomeLabel: 'The Outcome',
-    outcomeText: 'A 60% lift in event activation, 56% growth in mobile engagement, and a 70% cut in failed wallet withdrawals, alongside a newly launched subscription business and organization-level management tools that turned Planpadi into a more complete event management ecosystem.',
+    outcomeText: 'Event activation up 60%. Mobile engagement up 56%. Failed wallet withdrawals down 70%. A subscription tier launched. Organisation-level controls shipped. Planpadi moved from a ticketing tool to a full event management platform.',
   },
   {
     slug: 'msc-hpms',

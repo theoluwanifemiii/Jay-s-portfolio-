@@ -26,9 +26,9 @@ const roles = [
     location: 'Remote',
     type: 'Product',
     bullets: [
-      'Defined product roadmap using RICE prioritization and owned delivery across 3 product verticals, improving event activation by 60% through a redesigned homepage, creation flow, and ticketing UX.',
-      'Increased mobile engagement by 56% via KPI-driven UX improvements and mobile-first interaction design, tracked through Mixpanel analytics.',
-      'Reduced failed wallet withdrawals by 70% by redesigning KYC and verification flows with clearer validation and feedback mechanisms.',
+      'Defined product roadmap using RICE prioritization and owned delivery across 3 product verticals, improving event activation by 76% through a redesigned homepage, creation flow, and ticketing UX.',
+      'Increased mobile engagement by 88% via KPI-driven UX improvements and mobile-first interaction design, tracked through Mixpanel analytics.',
+      'Reduced failed wallet withdrawals by 80% by redesigning KYC and verification flows with clearer validation and feedback mechanisms.',
       'Led discovery, user interviews, analytics instrumentation, and Agile ceremonies to ensure fast, aligned delivery across a distributed engineering team.',
     ],
     tags: ['RICE Prioritization', 'UX', 'Analytics', 'Agile'],

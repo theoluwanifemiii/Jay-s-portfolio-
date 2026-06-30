@@ -95,9 +95,9 @@ export default function Numbers() {
   }, []);
 
   const stats = [
-    { value: '60', suffix: '%', label: 'Event activation lift', context: 'After redesigning the creation flow, homepage & ticketing at Planpadi', accent: true },
-    { value: '56', suffix: '%', label: 'Mobile engagement growth', context: 'KPI-driven UX improvements based on real usage data' },
-    { value: '70', suffix: '%', label: 'Failed withdrawals cut', context: 'Rebuilt KYC and verification flows with clearer validation & feedback' },
+    { value: '76', suffix: '%', label: 'Event activation lift', context: 'After redesigning the creation flow, homepage & ticketing at Planpadi', accent: true },
+    { value: '88', suffix: '%', label: 'Mobile engagement growth', context: 'KPI-driven UX improvements based on real usage data' },
+    { value: '80', suffix: '%', label: 'Failed withdrawals cut', context: 'Rebuilt KYC and verification flows with clearer validation & feedback' },
     { value: '33', suffix: '%', label: 'Platform reliability up', context: 'Communication features and system updates improving stability' },
     { value: '65', suffix: '%', label: 'Conversion rate', context: 'As Medical Rep at Fidson Healthcare, ranked top 3 within one year' },
     { value: '40', suffix: '%', label: 'Revenue growth driven', context: 'At Fidson Healthcare managing 80+ weekly healthcare clients' },
