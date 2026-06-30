@@ -18,6 +18,7 @@ export const works = [
     role: 'Product Manager',
     period: 'Jan 2025 – Mar 2026',
     liveUrl: 'https://planpadi.com/',
+    cardImage: teamCloseup2,
     intro: 'Planpadi lets organizers create, manage, promote and monetize events while giving attendees a seamless ticketing experience. As Planpadi’s customer base grew, organizers lacked control over private events, check-in was largely manual, and the platform had no monetization structure beyond ticket sales. As Product Manager, I drove product strategy, prioritization and cross-functional delivery to close those gaps.',
     blocks: [
       {
@@ -31,19 +32,6 @@ export const works = [
         text: 'Planpadi Premium and Planpadi Gold introduced recurring revenue, backed by feature-based and role-based access control.',
       },
     ],
-    gallery: {
-      caption: 'Live at Ekaabo 2025',
-      images: [
-        { src: checkinDesk, alt: 'The Planpadi team running check-in at Ekaabo 2025' },
-        { src: teamCloseup1, alt: 'The Planpadi team at the check-in desk' },
-        { src: teamCloseup2, alt: 'The Planpadi team at the check-in desk' },
-        { src: qrTicketSignage, alt: 'QR ticket signage for contactless event entry' },
-        { src: attendeeCheckin, alt: 'An attendee checking in via QR scan' },
-        { src: accessTagWristband, alt: 'A Planpadi access tag wristband' },
-        { src: accessTags, alt: 'Planpadi access tags for tiered, controlled entry' },
-        { src: qrShirt, alt: 'A Planpadi QR code printed on an event staff shirt' },
-      ],
-    },
     features: [
       {
         title: 'Private Event Management System',

@@ -55,7 +55,10 @@ export default function Highlights() {
                 onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.015)'}
                 onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
                 >
-                  <Mock />
+                  {w.cardImage
+                    ? <img src={w.cardImage} alt={w.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%' }} />
+                    : <Mock />
+                  }
                 </div>
                 <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--ink-faint)', marginBottom: 8 }}>
                   {w.eyebrow}
