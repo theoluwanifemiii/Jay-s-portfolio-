@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './index.css';
 import Navbar from './components/Navbar';
@@ -9,6 +10,7 @@ import Experience from './sections/Experience';
 import Testimonials from './sections/Testimonials';
 import Contact from './sections/Contact';
 import WorkDetail from './pages/WorkDetail';
+import Preloader from './components/Preloader';
 
 function Home() {
   return (
@@ -28,10 +30,15 @@ function Home() {
 }
 
 export default function App() {
+  const [preloaderDone, setPreloaderDone] = useState(false);
+
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/work/:slug" element={<WorkDetail />} />
-    </Routes>
+    <>
+      {!preloaderDone && <Preloader onDone={() => setPreloaderDone(true)} />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/work/:slug" element={<WorkDetail />} />
+      </Routes>
+    </>
   );
 }
