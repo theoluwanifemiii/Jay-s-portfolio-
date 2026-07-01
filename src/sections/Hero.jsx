@@ -1,15 +1,23 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
-export default function Hero() {
+export default function Hero({ animate }) {
   const sectionRef = useRef(null);
   const headlineRef = useRef(null);
   const tagsRef = useRef(null);
   const ctaRef = useRef(null);
 
+  // Hide elements immediately so they don't flash during the preloader
   useEffect(() => {
+    const words = headlineRef.current.querySelectorAll('.word');
+    gsap.set([...words, ...tagsRef.current.children, ...ctaRef.current.children], { opacity: 0 });
+  }, []);
+
+  useEffect(() => {
+    if (!animate) return;
+
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.6 });
+      const tl = gsap.timeline({ delay: 0.15 });
 
       tl.fromTo(headlineRef.current.querySelectorAll('.word'),
         { y: 24, opacity: 0 },
@@ -28,7 +36,7 @@ export default function Hero() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [animate]);
 
   const tags = ['Product Management', 'B2B SaaS', 'HealthTech', 'GTM & Growth', 'User Discovery'];
 

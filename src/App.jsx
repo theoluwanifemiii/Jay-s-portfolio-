@@ -12,12 +12,12 @@ import Contact from './sections/Contact';
 import WorkDetail from './pages/WorkDetail';
 import Preloader from './components/Preloader';
 
-function Home() {
+function Home({ animate }) {
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
+        <Hero animate={animate} />
         <Highlights />
         <Story />
         <Numbers />
@@ -36,7 +36,7 @@ export default function App() {
     <>
       {!preloaderDone && <Preloader onDone={() => setPreloaderDone(true)} />}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home animate={preloaderDone} />} />
         <Route path="/work/:slug" element={<WorkDetail />} />
       </Routes>
     </>
