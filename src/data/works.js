@@ -1,3 +1,7 @@
+import mscVideo from '../assets/MSC/msc-video.mp4';
+import mscCardImage from '../assets/MSC/msc-card.png';
+import planpadiScreen1 from '../assets/Planpadi/planpadi-screen-1.png';
+import planpadiScreen2 from '../assets/Planpadi/planpadi-screen-2.png';
 import checkinDesk from '../assets/Planpadi/checkin-desk.jpg';
 import qrTicketSignage from '../assets/Planpadi/qr-ticket-signage.jpg';
 import attendeeCheckin from '../assets/Planpadi/attendee-checkin.jpg';
@@ -19,16 +23,18 @@ export const works = [
     period: 'Jan 2025 – Mar 2026',
     liveUrl: 'https://planpadi.com/',
     cardImage: teamCloseup2,
-    intro: 'Planpadi lets organizers create, manage, promote and monetize events while giving attendees a seamless ticketing experience. As Planpadi's customer base grew, organizers lacked control over private events, check-in was largely manual, and the platform had no monetization structure beyond ticket sales. As Product Manager, I drove product strategy, prioritization and cross-functional delivery to close those gaps.',
+    intro: 'Planpadi lets organizers create, manage, promote and monetize events while giving attendees a seamless ticketing experience. As Planpadi\'s customer base grew, organizers lacked control over private events, check-in was largely manual, and the platform had no monetization structure beyond ticket sales. As Product Manager, I drove product strategy, prioritization and cross-functional delivery to close those gaps.',
     blocks: [
       {
         label: 'Private Event Management',
         mockKey: 'list',
+        image: planpadiScreen1,
         text: 'Invite-only events, link access, guest requests and host approval workflows give organizers full control over who gets in.',
       },
       {
         label: 'Subscription Monetization',
         mockKey: 'window',
+        image: planpadiScreen2,
         text: 'Planpadi Premium and Planpadi Gold introduced recurring revenue, backed by feature-based and role-based access control.',
       },
     ],
@@ -97,12 +103,14 @@ export const works = [
       },
     ],
     outcomeLabel: 'The Outcome',
-    outcomeText: 'Event activation up 60%. Mobile engagement up 56%. Failed wallet withdrawals down 70%. A subscription tier launched. Organisation-level controls shipped. Planpadi moved from a ticketing tool to a full event management platform.',
+    outcomeText: 'Event activation up 76%. Mobile engagement up 88%. Failed wallet withdrawals down 80%. A subscription tier launched. Organisation-level controls shipped. Planpadi moved from a ticketing tool to a full event management platform.',
   },
   {
     slug: 'msc-hpms',
     bg: '#3A3836',
     mockKey: 'blob',
+    cardImage: mscCardImage,
+    cardImageFit: 'cover',
     eyebrow: 'MSC · Hierarchical Promotional Management System (HPMS)',
     title: 'Building a referral growth platform from zero to MVP.',
     desc: 'Owned HPMS from ambiguous brief to shipped MVP in under three months — validated by 27+ pharmacy interviews and delivered with zero critical bugs.',
@@ -113,6 +121,7 @@ export const works = [
       {
         label: 'Two-Tier Referral Architecture',
         mockKey: 'blob',
+        video: mscVideo,
         text: 'A hierarchical inviter/invitee model designed to create network effects, with a commission lifecycle moving from pending to confirmed to withdrawable on a fixed monthly schedule.',
       },
       {

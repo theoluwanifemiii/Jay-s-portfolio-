@@ -56,7 +56,7 @@ export default function Highlights() {
                 onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
                 >
                   {w.cardImage
-                    ? <img src={w.cardImage} alt={w.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 25%' }} />
+                    ? <img src={w.cardImage} alt={w.title} style={{ width: '100%', height: '100%', objectFit: w.cardImageFit || 'cover', objectPosition: 'center 25%' }} />
                     : <Mock />
                   }
                 </div>

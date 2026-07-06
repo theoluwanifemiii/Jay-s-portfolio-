@@ -78,37 +78,73 @@ export default function WorkDetail() {
 
           <p className="detail-fade" style={{
             fontSize: 'clamp(16px, 1.8vw, 19px)', lineHeight: 1.7, fontWeight: 300,
-            color: 'var(--ink-muted)', maxWidth: 680, marginBottom: 'clamp(48px, 7vw, 88px)',
+            color: 'var(--ink-muted)', marginBottom: 'clamp(48px, 7vw, 88px)',
           }}>{work.intro}</p>
 
           {/* Two-up visual blocks */}
-          <div className="detail-fade detail-blocks" style={{
-            display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(20px, 3vw, 32px)',
-            marginBottom: 'clamp(56px, 8vw, 100px)',
-          }}>
-            {work.blocks.map((b) => {
-              const Mock = MOCKS[b.mockKey];
-              return (
-                <div key={b.label}>
-                  <div style={{
-                    background: work.bg, borderRadius: 18,
-                    aspectRatio: '4 / 3.2',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    marginBottom: 18, overflow: 'hidden',
-                  }}>
-                    <Mock />
+          {work.blocks.some(b => b.video) ? (
+            <div className="detail-fade" style={{ marginBottom: 'clamp(56px, 8vw, 100px)' }}>
+              <div style={{
+                background: '#F5F5F5', borderRadius: 18,
+                aspectRatio: '16 / 9',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                marginBottom: 24, overflow: 'hidden',
+                padding: '24px',
+              }}>
+                <video
+                  src={work.blocks.find(b => b.video).video}
+                  autoPlay muted loop playsInline
+                  style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', borderRadius: 10 }}
+                />
+              </div>
+              <div className="detail-blocks" style={{
+                display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(20px, 3vw, 32px)',
+              }}>
+                {work.blocks.map((b) => (
+                  <div key={b.label}>
+                    <p style={{
+                      fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase',
+                      color: 'var(--ink-faint)', marginBottom: 8,
+                    }}>{b.label}</p>
+                    <p style={{ fontSize: 15, color: 'var(--ink-muted)', lineHeight: 1.65, fontWeight: 300, maxWidth: 420 }}>
+                      {b.text}
+                    </p>
                   </div>
-                  <p style={{
-                    fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase',
-                    color: 'var(--ink-faint)', marginBottom: 8,
-                  }}>{b.label}</p>
-                  <p style={{ fontSize: 15, color: 'var(--ink-muted)', lineHeight: 1.65, fontWeight: 300, maxWidth: 420 }}>
-                    {b.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="detail-fade detail-blocks" style={{
+              display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(20px, 3vw, 32px)',
+              marginBottom: 'clamp(56px, 8vw, 100px)',
+            }}>
+              {work.blocks.map((b) => {
+                const Mock = MOCKS[b.mockKey];
+                return (
+                  <div key={b.label}>
+                    <div style={{
+                      background: work.bg, borderRadius: 18,
+                      aspectRatio: '4 / 3.2',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      marginBottom: 18, overflow: 'hidden',
+                    }}>
+                      {b.image
+                        ? <img src={b.image} alt={b.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        : <Mock />
+                      }
+                    </div>
+                    <p style={{
+                      fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase',
+                      color: 'var(--ink-faint)', marginBottom: 8,
+                    }}>{b.label}</p>
+                    <p style={{ fontSize: 15, color: 'var(--ink-muted)', lineHeight: 1.65, fontWeight: 300, maxWidth: 420 }}>
+                      {b.text}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          )}
 
           {/* Narrative sections */}
           {work.sections && work.sections.map((sec) => (

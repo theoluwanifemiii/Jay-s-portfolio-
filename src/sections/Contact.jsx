@@ -127,6 +127,13 @@ export default function Contact() {
           <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.25)' }}>
             Product Manager · Available for relocation · {new Date().getFullYear()}
           </p>
+          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.25)' }}>
+            Built with ❤️ by{' '}
+            <a href="https://olusworks.xyz" target="_blank" rel="noreferrer" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.2)' }}
+              onMouseEnter={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.8)'; }}
+              onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.45)'; }}
+            >Oluwanifemi Osunsanya</a>
+          </p>
         </div>
       </div>
     </section>
