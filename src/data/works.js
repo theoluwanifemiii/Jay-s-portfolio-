@@ -14,6 +14,7 @@ import qrShirt from '../assets/Planpadi/qr-shirt.jpg';
 export const works = [
   {
     slug: 'planpadi',
+    client: 'Planpadi',
     bg: '#1A4D3A',
     mockKey: 'list',
     eyebrow: 'Planpadi · Event Management & Vendor Outsourcing',
@@ -107,16 +108,23 @@ export const works = [
   },
   {
     slug: 'msc-hpms',
+    client: 'MSC',
+    clientOngoing: true,
     bg: '#3A3836',
     mockKey: 'blob',
     cardImage: mscCardImage,
     cardImageFit: 'cover',
     eyebrow: 'MSC · Hierarchical Promotional Management System (HPMS)',
     title: 'Building a referral growth platform from zero to MVP.',
-    desc: 'Owned HPMS from ambiguous brief to shipped MVP in under three months — validated by 27+ pharmacy interviews and delivered with zero critical bugs.',
+    desc: 'Owned HPMS from ambiguous brief to shipped MVP in under three months, validated by 27+ pharmacy interviews and delivered with zero critical bugs.',
     role: 'Product Owner',
     period: 'Mar – Jun 2026 · Phase 1',
-    intro: 'MSC needed a structured way to grow its customer base through referrals: a system where pharmacies and field staff could invite others, earn commission on the business they brought in, and be tracked through a full commission lifecycle. When I picked it up, it was a concept with a raw specification and no product definition — no PRD, no validated demand, no delivery plan, and no shared understanding of scope across the team. I owned HPMS from that brief to a shipped, production-ready MVP in under three months, validated by 27+ pharmacy interviews and delivered with zero critical bugs.',
+    introParagraphs: [
+      'Some products begin with a clear roadmap. HPMS didn\'t.',
+      'The project started as a rough business concept. Medicare Supply Chain wanted a referral platform that would help grow its pharmacy network by allowing pharmacies and field representatives to invite new pharmacies, earn commissions when those businesses transacted, and eventually withdraw those earnings. On paper, the idea was simple. In reality, almost everything needed to build it was missing.',
+      'There was no product definition, no validated demand, no delivery plan, and no shared understanding of what the MVP should actually contain. Engineering couldn\'t begin because there wasn\'t a product to build yet. There was only a business idea waiting to be translated into something concrete.',
+      'My responsibility wasn\'t simply delivering software. The first challenge was defining the product itself.',
+    ],
     blocks: [
       {
         label: 'Two-Tier Referral Architecture',
@@ -127,72 +135,62 @@ export const works = [
       {
         label: '27+ Pharmacy Interviews',
         mockKey: 'window',
-        text: 'A four-phase market research effort — desktop research, on-site interviews, and a quantitative survey — validated the commission model and shaped the MVP feature set before a line of code was written.',
+        text: 'A four-phase market research effort that validated the commission model and shaped the MVP feature set before a line of code was written.',
       },
     ],
     sections: [
       {
-        heading: 'The Problems',
-        body: 'Three problems sat on top of each other from day one.',
-        list: [
-          {
-            title: 'Ambiguous, untranslated brief',
-            text: 'The initial system specification arrived in a form the engineering team couldn\'t build from directly. Before any product work could start, someone had to turn it into clear, buildable requirements that the whole team agreed on.',
-          },
-          {
-            title: 'Unvalidated demand',
-            text: 'The referral-and-commission model assumed pharmacies would adopt a digital platform and respond to commission incentives. Nobody had tested that assumption with actual pharmacies. Building the wrong thing fast is still building the wrong thing.',
-          },
-          {
-            title: 'No delivery structure',
-            text: 'The team had no sprint cadence, no single source of truth for scope, and a hard MVP timeline. Without structure, an aggressive deadline was going to slip.',
-          },
+        heading: 'Understanding the problem before solving it',
+        paragraphs: [
+          'Before writing requirements or planning sprints, one question kept surfacing: would pharmacies actually want this? The entire business model depended on pharmacies participating in a digital referral programme and responding to commission incentives, yet that assumption had never been tested.',
+          'Rather than treating research as an optional exercise, I made it the first milestone of the project. I designed and led a four phase discovery process that combined desktop research, field visits across Lagos, interviews with more than twenty seven pharmacies, and a quantitative survey. Instead of asking whether the concept sounded good, we explored how pharmacies currently discovered suppliers, what motivated referrals, where procurement processes created friction, and whether commissions would genuinely influence behaviour.',
+          'Those conversations fundamentally changed how we approached the product. Several planned ideas became unnecessary, while others became far more important than originally expected. Instead of building around assumptions, we built around evidence.',
         ],
       },
       {
-        heading: 'What I Did',
-        list: [
-          {
-            title: 'Turned the brief into a product definition',
-            text: 'I translated the raw specification into clear product requirements across four PRD versions as business requirements shifted. The core system: a two-tier inviter/invitee model, a commission lifecycle with defined states, KYC with an exemption path for internal promoters, single-use invitation codes with auto-revoke, and delivery integrated into Personal Centre rather than a standalone app.',
-          },
-          {
-            title: 'Validated demand before over-building',
-            text: 'I designed and ran a four-phase market research effort: desktop research on the pharmacy distribution landscape, on-site interviews with 27+ pharmacies across multiple Lagos areas, and a quantitative survey on digital-platform adoption and commission model acceptance. The research surfaced real procurement pain points and directly shaped which features made the MVP cut.',
-          },
-          {
-            title: 'Built the delivery machine',
-            text: 'I established the operating rhythm the team didn\'t have: sprint planning, backlog grooming, daily standups, and weekly reporting, with a Sprint PRD as the single source of truth. Midway through, the team scaled from two engineers to six — I onboarded the new engineers with project history, specs, and acceptance criteria so the growth didn\'t cost velocity.',
-          },
-          {
-            title: 'Managed scope and stakeholders under pressure',
-            text: 'A mid-sprint decision merged HPMS into Personal Centre and removed territory-assignment functionality, hitting work already in progress. My role was to absorb the change without derailing the MVP: re-scoping cleanly, escalating blockers with proposed solutions, and keeping the GM and build teams aligned. When the MVP was demoed, executive feedback came back the same day — I coordinated the changes within 48 hours.',
-          },
+        heading: 'Turning an idea into a product',
+        paragraphs: [
+          'With the research complete, the next challenge was creating something engineering could actually build. Over four iterations of the Product Requirements Document, I translated the evolving business vision into clear product requirements, user flows, acceptance criteria, and implementation priorities.',
+          'The final MVP centred around a two tier referral architecture where pharmacies and field representatives could invite new pharmacies into the network through unique invitation codes. Every successful referral moved through a clearly defined commission lifecycle, progressing from pending to confirmed before becoming available for withdrawal on a fixed monthly schedule.',
+          'One of the most significant product decisions happened midway through planning. Originally, HPMS was intended to launch as its own standalone platform. As priorities shifted, we decided instead to integrate it directly into Personal Centre, MSC\'s existing internal platform. Although this required revisiting work already underway, it reduced duplicate functionality, shortened adoption time, and allowed users to access referrals from a product they were already familiar with.',
+          'Sometimes the fastest path to shipping isn\'t creating another application. It\'s making the existing one more valuable.',
         ],
       },
       {
-        heading: 'Key Decisions',
-        list: [
-          {
-            title: 'Ship inside Personal Centre, not standalone',
-            text: 'Merging HPMS into the existing platform mid-build was disruptive, but it cut scope, removed duplicate surface area, and got a usable product in front of users faster. I backed the change rather than defending the original plan.',
-          },
-          {
-            title: 'Exempt internal promoters from pharmacy KYC',
-            text: 'Forcing internal field staff through pharmacy verification would have blocked staff onboarding for no benefit. Separating the two paths kept both flows clean — a small requirements decision with real operational impact.',
-          },
-          {
-            title: 'Research before building the incentive model',
-            text: 'It would have been faster to build the commission system as specified. Talking to 27+ pharmacies first meant the incentive structure and positioning were grounded in what pharmacies actually said, not what we assumed.',
-          },
+        heading: 'Building the delivery process',
+        paragraphs: [
+          'Defining the product solved only half the problem. The project also lacked a consistent delivery process: no structured sprint cadence, no backlog management, and no single source of truth that engineering, stakeholders, and leadership could rely on.',
+          'To create alignment, I introduced sprint planning, backlog grooming, daily stand ups, weekly progress reporting, and Sprint PRDs that became the reference point for every development cycle.',
+          'Halfway through delivery, the engineering team expanded from two developers to six. Team growth often slows momentum before it improves it, particularly when new engineers have little context around product decisions. To prevent that, I onboarded each engineer into the project\'s history, business rules, acceptance criteria, and technical decisions, allowing the larger team to continue delivering without losing velocity.',
+        ],
+      },
+      {
+        heading: 'Managing change without losing momentum',
+        paragraphs: [
+          'Like most early stage products, HPMS changed while it was being built. Leadership decided that HPMS would no longer exist as a standalone platform and instead become part of Personal Centre. At the same time, territory assignment functionality was removed from scope, affecting work that had already begun.',
+          'Rather than protecting the original roadmap, I redefined priorities, updated the requirements, worked closely with engineering to minimise disruption, and kept business stakeholders aligned around the revised delivery plan.',
+          'When the executive team reviewed the MVP, additional feedback arrived the very same day. The required revisions were prioritised, coordinated, and delivered within forty eight hours, keeping the project on schedule.',
+        ],
+      },
+      {
+        heading: 'The outcome',
+        paragraphs: [
+          'In less than three months, HPMS evolved from a loosely defined business concept into a production ready referral platform. The MVP shipped on schedule with its complete agreed feature set, zero critical bugs, and no uncontrolled scope expansion, despite multiple changes throughout development.',
+          'More importantly, the project delivered far more than software. It gave MSC a validated product strategy grounded in user research, a repeatable product delivery process, an aligned engineering team, and a scalable foundation for future iterations. With the referral engine successfully established, the next phase focuses on increasing engagement through leaderboards, tier progression, and a dedicated field promoter dashboard.',
+        ],
+      },
+      {
+        heading: 'Looking back',
+        paragraphs: [
+          'The most valuable thing we built wasn\'t the referral platform itself. It was clarity.',
+          'When the project began, HPMS existed only as an idea. By the time Phase 1 concluded, it had become a validated product with a clear roadmap, defined business rules, a scalable technical foundation, and a team aligned around a shared vision. For me, that was the real success of the project.',
         ],
       },
     ],
-    outcomeLabel: 'The Outcome',
-    outcomeText: 'HPMS Phase 1 MVP shipped on schedule with zero critical bugs and zero scope creep. Full feature set delivered: hierarchical referral system, internal promoter onboarding, commission tracking and lifecycle, KYC, invitation-code management, and a complete admin dashboard — demoed to executive leadership on delivery day. Phase 2 moves into gamification: leaderboards, tier progression, and a field-promoter dashboard built on the foundation Phase 1 put in place.',
   },
   {
     slug: 'tochi-health',
+    client: 'TOHAI',
     bg: '#C4632A',
     mockKey: 'window',
     eyebrow: 'TOHAI Health Awareness Initiative · Public Health',

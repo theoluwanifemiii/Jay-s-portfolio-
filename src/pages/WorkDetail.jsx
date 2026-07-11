@@ -23,7 +23,8 @@ export default function WorkDetail() {
 
   if (!work) return <Navigate to="/" replace />;
 
-  const others = works.filter(w => w.slug !== work.slug);
+  const sameClient  = works.filter(w => w.slug !== work.slug && w.client === work.client);
+  const otherClient = works.filter(w => w.slug !== work.slug && w.client !== work.client);
 
   return (
     <div ref={pageRef}>
@@ -76,10 +77,21 @@ export default function WorkDetail() {
             }}>{work.status.note}</p>
           )}
 
-          <p className="detail-fade" style={{
-            fontSize: 'clamp(16px, 1.8vw, 19px)', lineHeight: 1.7, fontWeight: 300,
-            color: 'var(--ink-muted)', marginBottom: 'clamp(48px, 7vw, 88px)',
-          }}>{work.intro}</p>
+          {work.introParagraphs ? (
+            <div className="detail-fade" style={{ marginBottom: 'clamp(48px, 7vw, 88px)' }}>
+              {work.introParagraphs.map((p, i) => (
+                <p key={i} style={{
+                  fontSize: 'clamp(16px, 1.8vw, 19px)', lineHeight: 1.7, fontWeight: 300,
+                  color: 'var(--ink-muted)', marginBottom: 16,
+                }}>{p}</p>
+              ))}
+            </div>
+          ) : (
+            <p className="detail-fade" style={{
+              fontSize: 'clamp(16px, 1.8vw, 19px)', lineHeight: 1.7, fontWeight: 300,
+              color: 'var(--ink-muted)', marginBottom: 'clamp(48px, 7vw, 88px)',
+            }}>{work.intro}</p>
+          )}
 
           {/* Two-up visual blocks */}
           {work.blocks.some(b => b.video) ? (
@@ -149,16 +161,28 @@ export default function WorkDetail() {
           {/* Narrative sections */}
           {work.sections && work.sections.map((sec) => (
             <div key={sec.heading} className="detail-fade" style={{ marginBottom: 'clamp(56px, 8vw, 100px)' }}>
-              <p style={{
-                fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
-                color: 'var(--ink-faint)', marginBottom: 16,
-              }}>{sec.heading}</p>
+              <h2 style={{
+                fontSize: 'clamp(20px, 2.2vw, 26px)', fontWeight: 700,
+                letterSpacing: '-0.01em', lineHeight: 1.3,
+                color: 'var(--ink)', marginBottom: 24,
+              }}>{sec.heading}</h2>
 
               {sec.body && (
                 <p style={{
                   fontSize: 16, lineHeight: 1.7, fontWeight: 300, color: 'var(--ink-muted)',
-                  maxWidth: 680, marginBottom: sec.list ? 28 : 0,
+                  marginBottom: sec.list ? 28 : 0,
                 }}>{sec.body}</p>
+              )}
+
+              {sec.paragraphs && (
+                <div>
+                  {sec.paragraphs.map((p, i) => (
+                    <p key={i} style={{
+                      fontSize: 16, lineHeight: 1.7, fontWeight: 300,
+                      color: 'var(--ink-muted)', marginBottom: 20,
+                    }}>{p}</p>
+                  ))}
+                </div>
               )}
 
               {sec.list && (
@@ -283,30 +307,61 @@ export default function WorkDetail() {
           )}
 
           {/* Outcome row: label + bold paragraph */}
-          <div className="detail-fade" style={{
-            display: 'grid', gridTemplateColumns: '160px 1fr',
-            gap: 24, paddingTop: 32, borderTop: '1px solid var(--border)',
-            marginBottom: 'clamp(56px, 8vw, 100px)',
-          }}>
-            <p style={{
-              fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
-              color: 'var(--ink-faint)', paddingTop: 4,
-            }}>{work.outcomeLabel}</p>
-            <p style={{
-              fontSize: 'clamp(20px, 2.6vw, 30px)', fontWeight: 600,
-              letterSpacing: '-0.01em', lineHeight: 1.4,
-              color: 'var(--ink)', maxWidth: 760,
-            }}>{work.outcomeText}</p>
-          </div>
+          {work.outcomeText && (
+            <div className="detail-fade" style={{
+              display: 'grid', gridTemplateColumns: '160px 1fr',
+              gap: 24, paddingTop: 32, borderTop: '1px solid var(--border)',
+              marginBottom: 'clamp(56px, 8vw, 100px)',
+            }}>
+              <p style={{
+                fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
+                color: 'var(--ink-faint)', paddingTop: 4,
+              }}>{work.outcomeLabel}</p>
+              <p style={{
+                fontSize: 'clamp(20px, 2.6vw, 30px)', fontWeight: 600,
+                letterSpacing: '-0.01em', lineHeight: 1.4,
+                color: 'var(--ink)', maxWidth: 760,
+              }}>{work.outcomeText}</p>
+            </div>
+          )}
+
+          {/* More from same client */}
+          {(sameClient.length > 0 || work.clientOngoing) && (
+            <div className="detail-fade" style={{ paddingTop: 32, borderTop: '1px solid var(--border)', marginBottom: 32 }}>
+              <p style={{
+                fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
+                color: 'var(--ink-faint)', marginBottom: 20,
+              }}>More from {work.client}</p>
+              {sameClient.length > 0 ? (
+                <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+                  {sameClient.map(o => (
+                    <Link key={o.slug} to={`/work/${o.slug}`} style={{
+                      display: 'inline-flex', alignItems: 'center', gap: 8,
+                      padding: '12px 22px', borderRadius: 40,
+                      border: '1px solid var(--border)', fontSize: 14, fontWeight: 500,
+                      color: 'var(--ink)', transition: 'all 0.2s',
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--ink)'; e.currentTarget.style.background = 'var(--bg-alt)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'transparent'; }}
+                    >{o.eyebrow.split(' ·')[0]} →</Link>
+                  ))}
+                </div>
+              ) : (
+                <p style={{ fontSize: 14, color: 'var(--ink-muted)', fontWeight: 300, lineHeight: 1.6 }}>
+                  HPMS is one of several {work.client} systems I own. More case studies coming.
+                </p>
+              )}
+            </div>
+          )}
 
           {/* Other work */}
           <div className="detail-fade" style={{ paddingTop: 32, borderTop: '1px solid var(--border)' }}>
             <p style={{
               fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
               color: 'var(--ink-faint)', marginBottom: 24,
-            }}>More work</p>
+            }}>Other work</p>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              {others.map(o => (
+              {otherClient.map(o => (
                 <Link key={o.slug} to={`/work/${o.slug}`} style={{
                   display: 'inline-flex', alignItems: 'center', gap: 8,
                   padding: '12px 22px', borderRadius: 40,

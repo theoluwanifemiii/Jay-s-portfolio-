@@ -10,6 +10,7 @@ import Experience from './sections/Experience';
 import Testimonials from './sections/Testimonials';
 import Contact from './sections/Contact';
 import WorkDetail from './pages/WorkDetail';
+import Questionnaire from './pages/Questionnaire';
 import Preloader from './components/Preloader';
 
 function Home({ animate }) {
@@ -38,6 +39,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home animate={preloaderDone} />} />
         <Route path="/work/:slug" element={<WorkDetail />} />
+        <Route path="/client" element={<Questionnaire />} />
       </Routes>
     </>
   );
