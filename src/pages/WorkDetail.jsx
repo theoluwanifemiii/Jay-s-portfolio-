@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import Navbar from '../components/Navbar';
@@ -23,8 +23,52 @@ export default function WorkDetail() {
 
   if (!work) return <Navigate to="/" replace />;
 
-  const sameClient  = works.filter(w => w.slug !== work.slug && w.client === work.client);
-  const otherClient = works.filter(w => w.slug !== work.slug && w.client !== work.client);
+  const currentIndex = works.findIndex(w => w.slug === slug);
+  const nextWork = works[(currentIndex + 1) % works.length];
+
+  const [hovering, setHovering] = useState(false);
+  const thumbRef = useRef(null);
+  const trailRefs = useRef([]);
+  const mousePos = useRef({ x: -999, y: -999 });
+  const trailPos = useRef(Array(6).fill({ x: -999, y: -999 }));
+  const isHoverRef = useRef(false);
+  const rafRef = useRef(null);
+
+  useEffect(() => {
+    const animate = () => {
+      trailPos.current[0] = { ...mousePos.current };
+      for (let i = 1; i < 6; i++) {
+        const p = trailPos.current[i - 1];
+        const c = trailPos.current[i];
+        trailPos.current[i] = {
+          x: c.x + (p.x - c.x) * 0.28,
+          y: c.y + (p.y - c.y) * 0.28,
+        };
+      }
+      trailRefs.current.forEach((dot, i) => {
+        if (!dot) return;
+        const { x, y } = trailPos.current[i];
+        const size = 10 - i;
+        dot.style.transform = `translate(${x - size / 2}px, ${y - size / 2}px)`;
+        dot.style.opacity = isHoverRef.current ? String((1 - i / 6) * 0.7) : '0';
+        dot.style.width = `${size}px`;
+        dot.style.height = `${size}px`;
+      });
+      rafRef.current = requestAnimationFrame(animate);
+    };
+    rafRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, []);
+
+  const handleMove = (e) => {
+    mousePos.current = { x: e.clientX, y: e.clientY };
+    if (thumbRef.current) {
+      thumbRef.current.style.transform = `translate(${e.clientX + 28}px, ${e.clientY - 100}px)`;
+    }
+  };
+
+  const handleEnter = () => { isHoverRef.current = true; setHovering(true); };
+  const handleLeave = () => { isHoverRef.current = false; setHovering(false); };
 
   return (
     <div ref={pageRef}>
@@ -47,9 +91,17 @@ export default function WorkDetail() {
             color: 'var(--ink)', maxWidth: 880, marginBottom: 20,
           }}>{work.title}</h1>
 
-          <div className="detail-fade" style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap', marginBottom: work.status ? 16 : 40 }}>
+          <div className="detail-fade" style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', marginBottom: work.status ? 16 : 40 }}>
             <span style={{ fontSize: 13, color: 'var(--ink-muted)' }}>{work.role}</span>
             <span style={{ fontSize: 13, color: 'var(--ink-faint)' }}>{work.period}</span>
+            {work.tags && work.tags.map(tag => (
+              <span key={tag} style={{
+                fontSize: 11, fontWeight: 500, letterSpacing: '0.04em',
+                padding: '3px 10px', borderRadius: 20,
+                border: '1px solid var(--border)',
+                color: 'var(--ink-muted)',
+              }}>{tag}</span>
+            ))}
             {work.status && (
               <span style={{
                 fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase',
@@ -325,57 +377,72 @@ export default function WorkDetail() {
             </div>
           )}
 
-          {/* More from same client */}
-          {(sameClient.length > 0 || work.clientOngoing) && (
-            <div className="detail-fade" style={{ paddingTop: 32, borderTop: '1px solid var(--border)', marginBottom: 32 }}>
+          {/* Next project navigation */}
+          {nextWork && (
+            <Link
+              to={`/work/${nextWork.slug}`}
+              onMouseEnter={handleEnter}
+              onMouseLeave={handleLeave}
+              onMouseMove={handleMove}
+              style={{
+                display: 'block', textDecoration: 'none',
+                borderTop: '1px solid var(--border)',
+                padding: 'clamp(28px, 4vw, 56px) 0',
+              }}
+            >
               <p style={{
-                fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
-                color: 'var(--ink-faint)', marginBottom: 20,
-              }}>More from {work.client}</p>
-              {sameClient.length > 0 ? (
-                <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-                  {sameClient.map(o => (
-                    <Link key={o.slug} to={`/work/${o.slug}`} style={{
-                      display: 'inline-flex', alignItems: 'center', gap: 8,
-                      padding: '12px 22px', borderRadius: 40,
-                      border: '1px solid var(--border)', fontSize: 14, fontWeight: 500,
-                      color: 'var(--ink)', transition: 'all 0.2s',
-                    }}
-                    onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--ink)'; e.currentTarget.style.background = 'var(--bg-alt)'; }}
-                    onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'transparent'; }}
-                    >{o.eyebrow.split(' ·')[0]} →</Link>
-                  ))}
-                </div>
-              ) : (
-                <p style={{ fontSize: 14, color: 'var(--ink-muted)', fontWeight: 300, lineHeight: 1.6 }}>
-                  HPMS is one of several {work.client} systems I own. More case studies coming.
-                </p>
-              )}
-            </div>
+                fontSize: 11, fontWeight: 700, letterSpacing: '0.12em',
+                textTransform: 'uppercase', color: 'var(--ink-faint)', marginBottom: 14,
+              }}>Next project →</p>
+              <p style={{
+                fontSize: 'clamp(32px, 5.5vw, 80px)', fontWeight: 800,
+                color: '#e4e3e3', letterSpacing: '-0.03em', lineHeight: 1.05,
+              }}>{nextWork.title}</p>
+            </Link>
           )}
-
-          {/* Other work */}
-          <div className="detail-fade" style={{ paddingTop: 32, borderTop: '1px solid var(--border)' }}>
-            <p style={{
-              fontSize: 12, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
-              color: 'var(--ink-faint)', marginBottom: 24,
-            }}>Other work</p>
-            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              {otherClient.map(o => (
-                <Link key={o.slug} to={`/work/${o.slug}`} style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 8,
-                  padding: '12px 22px', borderRadius: 40,
-                  border: '1px solid var(--border)', fontSize: 14, fontWeight: 500,
-                  color: 'var(--ink)', transition: 'all 0.2s',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--ink)'; e.currentTarget.style.background = 'var(--bg-alt)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'transparent'; }}
-                >{o.eyebrow.split(' ·')[0]} →</Link>
-              ))}
-            </div>
-          </div>
         </div>
       </main>
+
+    
+      {/* Cursor trail dots */}
+      {Array.from({ length: 6 }, (_, i) => (
+        <div
+          key={i}
+          ref={el => { trailRefs.current[i] = el; }}
+          style={{
+            position: 'fixed', top: 0, left: 0,
+            width: 10, height: 10, borderRadius: '50%',
+            background: 'var(--ink)',
+            pointerEvents: 'none', zIndex: 9998,
+            opacity: 0,
+            transform: 'translate(-999px,-999px)',
+            willChange: 'transform, opacity',
+          }}
+        />
+      ))}
+
+      {/* Cursor-following thumbnail */}
+      <div
+        ref={thumbRef}
+        style={{
+          position: 'fixed', top: 0, left: 0,
+          width: 260, height: 175,
+          borderRadius: 14, overflow: 'hidden',
+          pointerEvents: 'none', zIndex: 9999,
+          boxShadow: '0 24px 60px rgba(0,0,0,0.18)',
+          opacity: hovering ? 1 : 0,
+          visibility: hovering ? 'visible' : 'hidden',
+          transition: 'opacity 0.2s, visibility 0.2s',
+          transform: 'translate(-999px,-999px)',
+          willChange: 'transform',
+        }}
+      >
+        {nextWork && (
+          nextWork.cardImage
+            ? <img src={nextWork.cardImage} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            : <div style={{ width: '100%', height: '100%', background: nextWork.bg }} />
+        )}
+      </div>
 
       <style>{`
         @media (max-width: 760px) {

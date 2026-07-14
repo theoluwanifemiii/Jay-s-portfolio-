@@ -33,7 +33,7 @@ export default function Highlights() {
           color: 'var(--ink)', maxWidth: 760,
           marginBottom: 'clamp(32px, 5vw, 56px)',
         }}>
-          Three products, three different problems. <span style={{ color: 'var(--ink-faint)' }}>Helping teams ship faster, own their roadmap, and reach more people with less guesswork.</span>
+          Five case studies. Three clients. <span style={{ color: 'var(--ink-faint)' }}>Helping teams ship faster, own their roadmap, and reach more people with less guesswork.</span>
         </p>
 
         <div className="works-grid" style={{
@@ -60,9 +60,21 @@ export default function Highlights() {
                     : <Mock />
                   }
                 </div>
-                <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--ink-faint)', marginBottom: 8 }}>
+                <p style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--ink-faint)', marginBottom: 10 }}>
                   {w.eyebrow}
                 </p>
+                {w.tags && (
+                  <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 10 }}>
+                    {w.tags.map(tag => (
+                      <span key={tag} style={{
+                        fontSize: 11, fontWeight: 500, letterSpacing: '0.04em',
+                        padding: '3px 10px', borderRadius: 20,
+                        border: '1px solid var(--border)',
+                        color: 'var(--ink-muted)',
+                      }}>{tag}</span>
+                    ))}
+                  </div>
+                )}
                 <p style={{ fontSize: 17, fontWeight: 700, color: 'var(--ink)', marginBottom: 8, letterSpacing: '-0.01em' }}>
                   {w.title}
                 </p>
