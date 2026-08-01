@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import portrait from '../assets/portrait.png';
 
@@ -12,7 +13,12 @@ export default function Navbar() {
     );
   }, []);
 
-  const links = ['Work', 'Story', 'Experience', 'Praise', 'Contact'];
+  const links = [
+    { label: 'Work', href: '/work' },
+    { label: 'About', href: '/about' },
+    { label: 'Experience', href: '/experience' },
+    { label: 'Contact', href: '/contact' },
+  ];
 
   return (
     <>
@@ -34,7 +40,7 @@ export default function Navbar() {
         borderRadius: 40,
         boxShadow: '0 8px 28px rgba(0,0,0,0.1)',
       }}>
-        <a href="/" style={{
+        <Link to="/" style={{
           width: 'clamp(28px, 8vw, 38px)', height: 'clamp(28px, 8vw, 38px)',
           display: 'block',
           borderRadius: '50%',
@@ -44,11 +50,11 @@ export default function Navbar() {
           <img src={portrait} alt="Jubril Osunlana" style={{
             width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 8%', transform: 'scale(2.6)',
           }} />
-        </a>
+        </Link>
 
         <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(1px, 0.6vw, 4px)' }}>
           {links.map(l => (
-            <a key={l} href={`/#${l.toLowerCase()}`} style={{
+            <Link key={l.label} to={l.href} style={{
               fontSize: 'clamp(10px, 2.8vw, 13.5px)',
               fontWeight: 500,
               padding: 'clamp(5px, 1.8vw, 8px) clamp(6px, 2.2vw, 14px)',
@@ -56,14 +62,15 @@ export default function Navbar() {
               color: 'var(--ink-muted)',
               whiteSpace: 'nowrap',
               transition: 'color 0.2s, background 0.2s',
+              textDecoration: 'none',
             }}
             onMouseEnter={e => { e.currentTarget.style.color = 'var(--ink)'; e.currentTarget.style.background = 'var(--bg-alt)'; }}
             onMouseLeave={e => { e.currentTarget.style.color = 'var(--ink-muted)'; e.currentTarget.style.background = 'transparent'; }}
-            >{l}</a>
+            >{l.label}</Link>
           ))}
         </div>
 
-        <a href="mailto:jubrilosunlana@gmail.com" className="nav-cta" style={{
+        <Link to="/contact" className="nav-cta" style={{
           display: 'inline-flex',
           alignItems: 'center',
           padding: 'clamp(7px, 2vw, 12px) clamp(10px, 3vw, 20px)',
@@ -79,7 +86,7 @@ export default function Navbar() {
         }}
         onMouseEnter={e => e.currentTarget.style.opacity = '0.82'}
         onMouseLeave={e => e.currentTarget.style.opacity = '1'}
-        >Get in touch</a>
+        >Get in touch</Link>
       </div>
 
       <style>{`

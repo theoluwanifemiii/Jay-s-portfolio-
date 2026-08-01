@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 export default function Hero({ animate }) {
@@ -87,7 +88,7 @@ export default function Hero({ animate }) {
         </div>
 
         <div ref={ctaRef} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }}>
-          <a href="#numbers" style={{
+          <Link to="/work" style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             padding: '14px 28px',
             background: 'var(--ink)',
@@ -96,13 +97,14 @@ export default function Hero({ animate }) {
             fontSize: 14.5, fontWeight: 600,
             letterSpacing: '0.01em',
             transition: 'opacity 0.2s',
+            textDecoration: 'none',
           }}
           onMouseEnter={e => e.currentTarget.style.opacity = '0.8'}
           onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
-            See the results →
-          </a>
-          <a href="#contact" style={{
+            View work →
+          </Link>
+          <Link to="/contact" style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             padding: '14px 28px',
             border: '1.5px solid var(--border)',
@@ -110,12 +112,13 @@ export default function Hero({ animate }) {
             borderRadius: 40,
             fontSize: 14.5, fontWeight: 500,
             transition: 'border-color 0.2s, background 0.2s',
+            textDecoration: 'none',
           }}
           onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--ink)'; e.currentTarget.style.background = 'var(--bg-alt)'; }}
           onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'transparent'; }}
           >
             Get in touch
-          </a>
+          </Link>
         </div>
       </div>
     </section>
